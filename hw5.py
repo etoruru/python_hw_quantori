@@ -8,11 +8,15 @@ lst = [int(num) for num in list(set(num_lst))]
 lst.sort()
 
 i = 0
-while i < len(lst) - 1: 
-    if lst[i + 1] == lst[i] + 1 :
-        i += 1
+while i < len(lst) - 1:
+    if lst.count(1) != 0:
+        if lst[i + 1] == lst[i] + 1 :
+            i += 1
+        else:
+            print(lst[i] + 1)
+            break
     else:
-        print(lst[i] + 1)
+        print(1)
         break
 else:
     print(lst[i] + 1)
