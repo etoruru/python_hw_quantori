@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from functools import reduce
+
 
 TERM = "\n"
 
@@ -34,8 +36,6 @@ def task(line):
 
         state = state_new
 
-        print(sym, transition)
-
         if transition == (None, "digit"):
             num_current += sym
 
@@ -68,4 +68,5 @@ def task(line):
 
 if __name__ == "__main__":
     text = input('Введите строку: ')
-    print(task(text))
+    summa = reduce(lambda x,y: x + y, [int(num) for num in task(text)])
+    print(summa)
